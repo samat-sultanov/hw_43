@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def calculate(request):
+    if request.method == "GET":
+        return render(request, "form_view.html")

@@ -1,0 +1,55 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator Form</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="form-center">
+        <h1>Calculate Numbers</h1>
+    </div>
+    <div class="form-center">
+        <form action="/" method="post">
+            {% csrf_token %}
+            <div style="text-align: right">
+                <label>First number: </label>
+                <input type="text" name="num1">
+            </div>
+            <br/>
+            <div style="text-align: right">
+                <label>Second number: </label>
+                <input type="text" name="num2">
+            </div>
+            <br/><br/>
+            <div>
+                <div>
+                    <input type="radio" id="add_nums" value="+" name="action">
+                    <label for="add_nums">Add</label>
+                </div>
+                <div>
+                    <input type="radio" id="subtract_nums" value="-" name="action">
+                    <label for="subtract_nums">Subtract</label>
+                </div>
+                <div>
+                    <input type="radio" id="multiply_nums" value="*" name="action">
+                    <label for="multiply_nums">Multiply</label>
+                </div>
+                <div>
+                    <input type="radio" id="divide_nums" value="/" name="action">
+                    <label for="divide_nums">Divide</label>
+                </div>
+                <br/>
+                <div>
+                    <input type="submit" value="Calculate">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
