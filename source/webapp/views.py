@@ -5,8 +5,6 @@ def calculate(request):
     if request.method == "GET":
         return render(request, "form_view.html")
     elif request.method == 'POST':
-        print(request.POST)
-        print(request.POST.get('action'))
         try:
             num1 = float(request.POST.get('num1'))
             num2 = float(request.POST.get('num2'))
